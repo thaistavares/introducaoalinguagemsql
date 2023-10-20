@@ -55,3 +55,7 @@ CREATE VIEW Presentation_VW AS
          INNER JOIN Room ON Presentation.idBookedRoom = Room.idRoom;
 
 SELECT * FROM Presentation_VW WHERE seatCapacity >= 30;
+
+INSERT INTO Attendee (firstName, lastName) VALUES ('Thais', 'Tavares');
+
+SELECT * FROM Attendee;
