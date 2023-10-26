@@ -59,3 +59,28 @@ SELECT * FROM Presentation_VW WHERE seatCapacity >= 30;
 INSERT INTO Attendee (firstName, lastName) VALUES ('Thais', 'Tavares');
 
 SELECT * FROM Attendee;
+
+INSERT INTO Attendee (firstName, lastName) VALUES ('Geisi', 'Padilha'), ('Odiléa', 'Lira'), ('Luana', 'Brown');
+
+INSERT INTO Attendee (firstName, lastName) SELECT firstName, lastName FROM otherTable;
+
+INSERT INTO Company (name, description, idPrimaryContactAttendee) VALUES ('RexApp Solutions', 'A mobile app delivery service', 5); -- Falha
+INSERT INTO Company (name, description, idPrimaryContactAttendee) VALUES ('RexApp Solutions', 'A mobile app delivery service', 3); -- Não falha
+
+DELETE FROM Attendee;
+
+DELETE FROM Attendee WHERE phone IS NULL AND email IS NULL;
+
+SELECT FROM Attendee WHERE phone IS NULL AND email IS NULL;
+
+TRUNCATE TABLE Attendee; -- Muito usado no MySQL
+
+UPDATE Attendee SET email = UPPER(email);
+
+UPDATE Attendee SET firstName = UPPER(firstName), lastName = UPPER(lastName);
+
+UPDATE Attendee SET vip = 1 WHERE idAttendee IN (3,4); -- Onde idAttendee for 3 ou 4;
+
+DROP TABLE myUnwantedTable;
+
+
